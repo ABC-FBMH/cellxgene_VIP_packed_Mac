@@ -1,170 +1,115 @@
-# cellxgene_VIP Packed for macOS Apple Silicon
+# cellxgene_VIP for macOS Apple Silicon
 
-This is a portable, pre-packaged version of [cellxgene_VIP](https://github.com/interactivereport/cellxgene_VIP) for macOS Apple Silicon (M1/M2/M3 chips).
+**The easiest way to visualize single-cell data!**
 
-## Download
+---
 
-**Download the portable package from the Releases section:**
-👉 https://github.com/ABC-FBMH/cellxgene_VIP_packed_Mac_apple_chip/releases/latest
+## 🎯 What is This?
 
-The release contains `cellxgene_VIP_portable_Mac_arm64.tar.gz` (~835MB) which includes everything needed.
+cellxgene_VIP is a powerful tool for analyzing and visualizing single-cell RNA sequencing data. It lets you:
+- 📊 View gene expression (violin plots, heatmaps)
+- 🔬 Find differences between cell groups (DEG analysis)
+- 🗺️ Explore cell relationships (UMAP, t-SNE plots)
+- 🔥 Create volcano plots
 
-## What is cellxgene_VIP?
+---
 
-cellxgene VIP (Visualization In Plugin) is an extension for [cellxgene](https://github.com/chanzuckerberg/cellxgene) that provides enhanced visualization capabilities including:
-- Differential Expression Analysis (DEG)
-- Violin plots
-- Heatmaps (Seaborn and ComplexHeatmap)
-- Embedding plots
-- Volcano plots
-- And much more!
+## 📥 Installation (Super Easy!)
 
-## What's Included
+### Step 1: Download
+1. Click this link: **https://github.com/ABC-FBMH/cellxgene_VIP_packed_Mac_apple_chip/releases/latest**
+2. Scroll down to "Assets" and click on **`cellxgene_VIP_portable_Mac_arm64.tar.gz`**
 
-This package includes:
-- Python 3.10
-- R 4.4
-- cellxgene v1.3.0
-- All required Python packages (scanpy, matplotlib, seaborn, plotly, etc.)
-- All required R packages (ComplexHeatmap, Cairo, ggpubr, tidyverse, etc.)
-- Pre-configured VIP interface files
+### Step 2: Double-Click to Open
+1. Find the downloaded file in your **Downloads** folder
+2. Double-click it to extract
 
-## Installation Instructions
+### Step 3: Setup (One-Time)
+1. Open the extracted folder
+2. **Double-click `ONE_CLICK_SETUP.command`**
+3. Wait for "Setup Complete!" message
 
-### Prerequisites
-- macOS with Apple Silicon (M1, M2, M3, etc.)
-- Minimum 16GB RAM recommended for large datasets
+---
 
-### Step 1: Download and Extract
+## 🚀 How to Use
 
-```bash
-# Create a directory for the installation
-mkdir -p ~/cellxgene_VIP
+### Step 1: Start the App
+1. Open the `cellxgene_VIP` folder
+2. **Double-click `cellxgene_VIP_launcher.command`**
+3. A Terminal window will open
 
-# Navigate to the directory
-cd ~/cellxgene_VIP
+### Step 2: Load Your Data
+1. **Drag your .h5ad file** onto the Terminal window
+2. Press **Enter**
+3. Wait for "Launching! Please go to http://localhost:5005"
 
-# Download the portable package (or download from GitHub releases)
-# curl -L -o cellxgene_VIP_portable_Mac_arm64.tar.gz \
-#   "https://github.com/ABC-FBMH/cellxgene_VIP_packed_Mac_apple_chip/releases/latest/download/cellxgene_VIP_portable_Mac_arm64.tar.gz"
+### Step 3: View Your Data
+1. **Chrome browser** will open automatically
+2. Go to: **http://localhost:5005**
+3. Enjoy exploring your data!
 
-# Extract the packed environment
-tar -xzf cellxgene_VIP_portable_Mac_arm64.tar.gz
+---
 
-# Rename the extracted folder
-mv ./cellxgene_VIP_opencode_fixed cellxgene_env
-```
+## 📝 Quick Guide
 
-### Step 2: Activate the Environment
+### Selecting Cells
+- Click and drag on the main plot to select cells
 
-```bash
-# Source the conda activate script
-source ~/cellxgene_VIP/cellxgene_env/etc/profile.d/conda.sh
+### Using VIP Panel
+- Find the **"Visualization in Plugin"** panel on the left
+- Click the expand button to open it
+- Choose your plot type:
+  - **Violin**: Gene expression plots
+  - **Heatmap**: Expression heatmaps
+  - **Embedding**: Cell maps (UMAP, t-SNE)
+  - **DEG**: Find genes that differ between groups
 
-# Activate the environment
-conda activate ~/cellxgene_VIP/cellxgene_env
-```
+---
 
-### Step 3: Run cellxgene VIP
+## 🔧 Troubleshooting
 
-```bash
-# Navigate to the cellxgene_VIP directory
-cd ~/cellxgene_VIP
+### "This app is from an unidentified developer"
+1. Right-click on the file
+2. Select "Open With" → "Terminal"
+3. Click "Open" when prompted
 
-# Launch cellxgene with your data file
-cellxgene launch /path/to/your/data.h5ad --port 5005 --host localhost
-```
+### Browser shows white screen
+- Make sure you're using **Chrome**
+- Try pressing **Command + Shift + R** to refresh
 
-Then open your browser and go to: **http://localhost:5005**
+### Something doesn't work
+- Close the app (press Ctrl+C in Terminal)
+- Try again
 
-## Quick Start Example
+---
 
-```bash
-# After extracting and activating the environment:
-cd ~/cellxgene_VIP
-cellxgene launch ~/Downloads/output.h5ad --port 5005 --host localhost
-```
+## 💻 System Requirements
 
-## Using the Setup Script
+- **Mac with Apple Silicon chip** (M1, M2, M3, or M4)
+  - Check: Apple menu → About This Mac → Chip
+- **macOS 11 or later**
+- **Chrome browser** (recommended)
+- **8GB RAM minimum**, 16GB recommended
 
-After extraction, you can use the helper scripts:
+---
 
-```bash
-cd ~/cellxgene_VIP
+## 📁 What Each File Does
 
-# Make scripts executable
-chmod +x setup.sh activate.sh launch.sh
+| File | Purpose |
+|------|---------|
+| `cellxgene_VIP_launcher.command` | Start the app (DOUBLE-CLICK THIS) |
+| `ONE_CLICK_SETUP.command` | One-time setup |
+| `cellxgene_VIP_opencode_fixed/` | The actual software |
+| `SETUP_GUIDE.md` | Detailed instructions |
 
-# Activate environment
-./activate.sh
+---
 
-# Launch with a data file
-./launch.sh ~/Downloads/data.h5ad 5005
-```
+## ❓ Questions?
 
-## Troubleshooting
+Contact the person who shared this with you, or visit:
+- cellxgene_VIP: https://github.com/interactivereport/cellxgene_VIP
+- cellxgene: https://github.com/chanzuckerberg/cellxgene
 
-### "Command not found: cellxgene"
-Make sure you've activated the conda environment:
-```bash
-source ~/cellxgene_VIP/cellxgene_env/etc/profile.d/conda.sh
-conda activate ~/cellxgene_VIP/cellxgene_env
-```
+---
 
-### R packages not found
-The environment includes R packages installed in the system R library. Make sure you're using the correct R path as configured in `vip.env`.
-
-### White screen on load
-Clear your browser cache or try a different browser. Chrome is recommended.
-
-## Package Contents
-
-```
-cellxgene_VIP_portable_Mac_arm64.tar.gz (~835MB)
-├── cellxgene_VIP_opencode_fixed/    # The conda environment
-│   ├── bin/                         # Executables
-│   ├── lib/                         # Python and R libraries
-│   ├── etc/                         # Conda configuration
-│   └── ...
-├── README.md                        # This file
-└── setup.sh                        # Setup helper script
-```
-
-## System Requirements
-
-- **OS**: macOS 11+ (Big Sur or later)
-- **Architecture**: Apple Silicon (arm64)
-- **RAM**: 8GB minimum, 16GB recommended
-- **Disk Space**: ~3GB for the packed environment
-
-## Version Information
-
-- **cellxgene**: v1.3.0
-- **Python**: 3.10
-- **R**: 4.4
-- **Platform**: macOS Apple Silicon
-
-## Features Tested
-
-- [x] Violin plots
-- [x] Heatmaps (Seaborn)
-- [x] Heatmaps (ComplexHeatmap/R)
-- [x] Embedding plots
-- [x] DEG (Differential Expression Analysis)
-- [x] Volcano plots
-
-## Credits
-
-This is a pre-packaged version of [cellxgene_VIP](https://github.com/interactivereport/cellxgene_VIP) by Interactive Report.
-
-Original cellxgene_VIP: https://github.com/interactivereport/cellxgene_VIP
-
-## License
-
-This portable package follows the same license as the original [cellxgene](https://github.com/chanzuckerberg/cellxgene) and [cellxgene_VIP](https://github.com/interactivereport/cellxgene_VIP) projects.
-
-## Support
-
-For issues with the original VIP functionality, please refer to the [cellxgene_VIP GitHub repository](https://github.com/interactivereport/cellxgene_VIP).
-
-For issues with cellxgene itself, please refer to the [cellxgene GitHub repository](https://github.com/chanzuckerberg/cellxgene).
+**Have fun exploring your single-cell data! 🧬**
