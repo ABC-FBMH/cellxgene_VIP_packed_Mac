@@ -2,6 +2,13 @@
 
 This is a portable, pre-packaged version of [cellxgene_VIP](https://github.com/interactivereport/cellxgene_VIP) for macOS Apple Silicon (M1/M2/M3 chips).
 
+## Download
+
+**Download the portable package from the Releases section:**
+👉 https://github.com/ABC-FBMH/cellxgene_VIP_packed_Mac_apple_chip/releases/latest
+
+The release contains `cellxgene_VIP_portable_Mac_arm64.tar.gz` (~835MB) which includes everything needed.
+
 ## What is cellxgene_VIP?
 
 cellxgene VIP (Visualization In Plugin) is an extension for [cellxgene](https://github.com/chanzuckerberg/cellxgene) that provides enhanced visualization capabilities including:
@@ -28,7 +35,7 @@ This package includes:
 - macOS with Apple Silicon (M1, M2, M3, etc.)
 - Minimum 16GB RAM recommended for large datasets
 
-### Step 1: Extract the Conda Environment
+### Step 1: Download and Extract
 
 ```bash
 # Create a directory for the installation
@@ -37,11 +44,14 @@ mkdir -p ~/cellxgene_VIP
 # Navigate to the directory
 cd ~/cellxgene_VIP
 
+# Download the portable package (or download from GitHub releases)
+# curl -L -o cellxgene_VIP_portable_Mac_arm64.tar.gz \
+#   "https://github.com/ABC-FBMH/cellxgene_VIP_packed_Mac_apple_chip/releases/latest/download/cellxgene_VIP_portable_Mac_arm64.tar.gz"
+
 # Extract the packed environment
-# Note: The tar file name may vary based on when you downloaded it
 tar -xzf cellxgene_VIP_portable_Mac_arm64.tar.gz
 
-# Rename the extracted folder (optional, but recommended)
+# Rename the extracted folder
 mv ./cellxgene_VIP_opencode_fixed cellxgene_env
 ```
 
@@ -75,6 +85,23 @@ cd ~/cellxgene_VIP
 cellxgene launch ~/Downloads/output.h5ad --port 5005 --host localhost
 ```
 
+## Using the Setup Script
+
+After extraction, you can use the helper scripts:
+
+```bash
+cd ~/cellxgene_VIP
+
+# Make scripts executable
+chmod +x setup.sh activate.sh launch.sh
+
+# Activate environment
+./activate.sh
+
+# Launch with a data file
+./launch.sh ~/Downloads/data.h5ad 5005
+```
+
 ## Troubleshooting
 
 ### "Command not found: cellxgene"
@@ -93,13 +120,14 @@ Clear your browser cache or try a different browser. Chrome is recommended.
 ## Package Contents
 
 ```
-cellxgene_VIP_portable_Mac_arm64.tar.gz
+cellxgene_VIP_portable_Mac_arm64.tar.gz (~835MB)
 ├── cellxgene_VIP_opencode_fixed/    # The conda environment
 │   ├── bin/                         # Executables
 │   ├── lib/                         # Python and R libraries
 │   ├── etc/                         # Conda configuration
 │   └── ...
-└── README.md                        # This file
+├── README.md                        # This file
+└── setup.sh                        # Setup helper script
 ```
 
 ## System Requirements
@@ -115,6 +143,15 @@ cellxgene_VIP_portable_Mac_arm64.tar.gz
 - **Python**: 3.10
 - **R**: 4.4
 - **Platform**: macOS Apple Silicon
+
+## Features Tested
+
+- [x] Violin plots
+- [x] Heatmaps (Seaborn)
+- [x] Heatmaps (ComplexHeatmap/R)
+- [x] Embedding plots
+- [x] DEG (Differential Expression Analysis)
+- [x] Volcano plots
 
 ## Credits
 
