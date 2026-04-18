@@ -26,93 +26,86 @@ All required packages are pre-installed - no additional installation needed!
 
 ---
 
-## 📥 Installation (Super Easy!)
+## 📥 Installation
 
-### Step 1: Download
-1. Click this link: **https://github.com/ABC-FBMH/cellxgene_VIP_packed_Mac/releases/latest**
-2. Scroll down to "Assets" and click on **`cellxgene_VIP_portable_Mac_arm64.tar.gz`**
+### Option A: Quick Install (2 files to download)
 
-### Step 2: Double-Click to Open
-1. Find the downloaded file in your **Downloads** folder
-2. Double-click it to extract
+You need to download **2 files** from the Releases page:
+1. **`cellxgene_VIP_portable_Mac_arm64.tar.gz`** (the main package - ~835MB)
+2. **`cellxgene_VIP_launcher.command`** (the launcher script - small file)
 
-### Step 3: Setup (One-Time)
-1. Open the extracted folder
-2. **Double-click `ONE_CLICK_SETUP.command`**
-3. Wait for "Setup Complete!" message
+**Go to:** https://github.com/ABC-FBMH/cellxgene_VIP_packed_Mac/releases/latest
+
+Scroll down to "Assets" and download both files.
+
+### Step 1: Create Folder
+1. Create a new folder on your Desktop called `cellxgene_VIP`
+2. Move both downloaded files into this folder
+
+### Step 2: Extract the Package
+1. **Double-click** `cellxgene_VIP_portable_Mac_arm64.tar.gz`
+2. Wait for extraction to complete
+3. You should now see a folder called `cellxgene_VIP_opencode_fixed`
+
+### Step 3: Make Launcher Work
+1. Open the `cellxgene_VIP_opencode_fixed` folder
+2. Right-click on `etc` folder → select "New Terminal at Folder"
+3. In Terminal, type this and press Enter:
+   ```bash
+   cp ../cellxgene_VIP_launcher.command .
+   ```
+4. You should now see `cellxgene_VIP_launcher.command` in the folder
 
 ---
 
 ## 🚀 How to Use
 
-### Step 1: Start the App
-1. Open the `cellxgene_VIP` folder
-2. **Double-click `cellxgene_VIP_launcher.command`**
-3. A Terminal window will open
+### Every Time You Want to Use It:
 
-### Step 2: Load Your Data
-1. **Drag your .h5ad file** onto the Terminal window
-2. Press **Enter**
-3. Wait for "Launching! Please go to http://localhost:5005"
+1. Open the `cellxgene_VIP_opencode_fixed` folder
+2. Right-click on `etc` folder → select "New Terminal at Folder"
+3. In Terminal, type:
+   ```bash
+   source etc/profile.d/conda.sh && conda activate . && cellxgene launch ~/Downloads/YOUR_FILE.h5ad --port 5005
+   ```
+   *(Replace `YOUR_FILE.h5ad` with your actual file name)*
 
-### Step 3: View Your Data
-1. **Chrome browser** will open automatically
-2. Go to: **http://localhost:5005**
-3. Enjoy exploring your data!
+4. Press **Enter** and wait for "Launching!"
+5. Open Chrome and go to: **http://localhost:5005**
 
 ---
 
-## 📝 Quick Guide
+## 📝 Alternative: Using the Launcher Script
 
-### Selecting Cells
-- Click and drag on the main plot to select cells
+If you've set up the launcher script, you can simply:
 
-### Using VIP Panel
-- Find the **"Visualization in Plugin"** panel on the left
-- Click the expand button to open it
-- Choose your plot type:
-  - **Violin**: Gene expression plots
-  - **Heatmap**: Expression heatmaps
-  - **Embedding**: Cell maps (UMAP, t-SNE)
-  - **DEG**: Find genes that differ between groups
+1. **Double-click** `cellxgene_VIP_launcher.command`
+2. **Drag your .h5ad file** onto the Terminal window
+3. Press **Enter**
+
+The browser will open automatically!
 
 ---
 
 ## 🔧 Troubleshooting
 
 ### "This app is from an unidentified developer"
-1. Right-click on the file
+1. Right-click on the .command file
 2. Select "Open With" → "Terminal"
 3. Click "Open" when prompted
 
 ### Browser shows white screen
-- Make sure you're using **Chrome**
-- Try pressing **Command + Shift + R** to refresh
-
-### Something doesn't work
-- Close the app (press Ctrl+C in Terminal)
-- Try again
+- Use **Chrome** browser
+- Try pressing **Command + Shift + R**
 
 ---
 
 ## 💻 System Requirements
 
-- **Mac with Apple Silicon chip** (M1, M2, M3, or M4)
-  - Check: Apple menu → About This Mac → Chip
+- **Mac with Apple Silicon** (M1, M2, M3, or M4)
 - **macOS 11 or later**
 - **Chrome browser** (recommended)
 - **8GB RAM minimum**, 16GB recommended
-
----
-
-## 📁 What Each File Does
-
-| File | Purpose |
-|------|---------|
-| `cellxgene_VIP_launcher.command` | Start the app (DOUBLE-CLICK THIS) |
-| `ONE_CLICK_SETUP.command` | One-time setup |
-| `cellxgene_VIP_opencode_fixed/` | The actual software |
-| `SETUP_GUIDE.md` | Detailed instructions |
 
 ---
 
