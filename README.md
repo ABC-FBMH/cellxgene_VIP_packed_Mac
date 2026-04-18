@@ -6,7 +6,7 @@
 
 ## 🎯 What is This?
 
-cellxgene_VIP is a powerful tool for analyzing and visualizing single-cell RNA sequencing data. It lets you:
+cellxgene_VIP is a powerful tool for analyzing and visualizing single-cell RNA sequencing data:
 - 📊 View gene expression (violin plots, heatmaps)
 - 🔬 Find differences between cell groups (DEG analysis)
 - 🗺️ Explore cell relationships (UMAP, t-SNE plots)
@@ -22,81 +22,72 @@ cellxgene_VIP is a powerful tool for analyzing and visualizing single-cell RNA s
 | **Python** | 3.10 |
 | **R** | 4.4 |
 
-All required packages are pre-installed - no additional installation needed!
-
 ---
 
-## 📥 Installation
+## 📥 Installation (2 Steps)
 
-### Option A: Quick Install (2 files to download)
+### Step 1: Download from GitHub
 
-You need to download **2 files** from the Releases page:
-1. **`cellxgene_VIP_portable_Mac_arm64.tar.gz`** (the main package - ~835MB)
-2. **`cellxgene_VIP_launcher.command`** (the launcher script - small file)
+Go to: **https://github.com/ABC-FBMH/cellxgene_VIP_packed_Mac/releases/latest**
 
-**Go to:** https://github.com/ABC-FBMH/cellxgene_VIP_packed_Mac/releases/latest
+You need to download **2 files** from the "Assets" section:
+1. **`cellxgene_VIP_portable_Mac_arm64.tar.gz`** (~835 MB) - The main package
+2. **`cellxgene_VIP_launcher.command`** (small file) - The launcher script
 
-Scroll down to "Assets" and download both files.
+### Step 2: Extract and Use
 
-### Step 1: Create Folder
-1. Create a new folder on your Desktop called `cellxgene_VIP`
-2. Move both downloaded files into this folder
-
-### Step 2: Extract the Package
-1. **Double-click** `cellxgene_VIP_portable_Mac_arm64.tar.gz`
-2. Wait for extraction to complete
-3. You should now see a folder called `cellxgene_VIP_opencode_fixed`
-
-### Step 3: Make Launcher Work
-1. Open the `cellxgene_VIP_opencode_fixed` folder
-2. Right-click on `etc` folder → select "New Terminal at Folder"
-3. In Terminal, type this and press Enter:
-   ```bash
+1. **Create a folder** on your Desktop named `cellxgene_VIP`
+2. **Move both downloaded files** into this folder
+3. **Double-click** `cellxgene_VIP_portable_Mac_arm64.tar.gz` to extract it
+4. Open the extracted folder `cellxgene_VIP_opencode_fixed`
+5. **Right-click** on the `etc` folder and select **"New Terminal at Folder"**
+6. In the Terminal window, **copy and paste** this command:
+   ```
    cp ../cellxgene_VIP_launcher.command .
    ```
-4. You should now see `cellxgene_VIP_launcher.command` in the folder
+   Then press **Enter**
+7. Now you can see `cellxgene_VIP_launcher.command` in the folder
 
 ---
 
-## 🚀 How to Use
+## 🚀 How to Use (Every Time)
 
-### Every Time You Want to Use It:
+### Option A: Quick Start (Recommended)
 
 1. Open the `cellxgene_VIP_opencode_fixed` folder
-2. Right-click on `etc` folder → select "New Terminal at Folder"
-3. In Terminal, type:
-   ```bash
+2. **Right-click** on the `etc` folder → **"New Terminal at Folder"**
+3. In Terminal, **copy and paste** this command:
+   ```
    source etc/profile.d/conda.sh && conda activate . && cellxgene launch ~/Downloads/YOUR_FILE.h5ad --port 5005
    ```
-   *(Replace `YOUR_FILE.h5ad` with your actual file name)*
+   *(Replace `YOUR_FILE.h5ad` with your actual data file name)*
 
-4. Press **Enter** and wait for "Launching!"
-5. Open Chrome and go to: **http://localhost:5005**
+4. Press **Enter**
+5. Wait for "Launching! Please go to http://localhost:5005"
+6. Open **Chrome** and go to: **http://localhost:5005**
 
----
+### Option B: Using the Launcher
 
-## 📝 Alternative: Using the Launcher Script
-
-If you've set up the launcher script, you can simply:
+If you've set up the launcher in Step 2 above:
 
 1. **Double-click** `cellxgene_VIP_launcher.command`
 2. **Drag your .h5ad file** onto the Terminal window
 3. Press **Enter**
-
-The browser will open automatically!
+4. Browser opens automatically!
 
 ---
 
 ## 🔧 Troubleshooting
 
 ### "This app is from an unidentified developer"
-1. Right-click on the .command file
-2. Select "Open With" → "Terminal"
-3. Click "Open" when prompted
+- Right-click on the .command file → "Open With" → "Terminal" → Click "Open"
 
 ### Browser shows white screen
 - Use **Chrome** browser
-- Try pressing **Command + Shift + R**
+- Press **Command + Shift + R** to refresh
+
+### Command not found errors
+- Make sure you opened Terminal from the `etc` folder
 
 ---
 
@@ -111,7 +102,6 @@ The browser will open automatically!
 
 ## ❓ Questions?
 
-Contact the person who shared this with you, or visit:
 - cellxgene_VIP: https://github.com/interactivereport/cellxgene_VIP
 - cellxgene: https://github.com/chanzuckerberg/cellxgene
 
