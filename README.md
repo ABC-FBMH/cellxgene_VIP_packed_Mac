@@ -32,13 +32,13 @@ Click on **`cellxgene_VIP_portable_Mac_arm64.tar.gz`** (~835 MB) to download.
 
 ## 🚀 How to Use
 
-### Step 1: Open Terminal
+### Step 1: Open Terminal in the Right Place
 
 1. Open the `cellxgene_VIP_opencode_fixed` folder
-2. **Right-click** on the `etc` folder
+2. **Right-click** on the **background** (empty space) of the folder
 3. Select **"New Terminal at Folder"**
 
-A Terminal window will open!
+A Terminal window will open! The Terminal will be in the `cellxgene_VIP_opencode_fixed` folder.
 
 ### Step 2: Run cellxgene
 
@@ -68,9 +68,9 @@ source etc/profile.d/conda.sh && conda activate . && cellxgene launch ~/Download
 
 | Action | Command |
 |--------|---------|
-| Open folder | Right-click `etc` → New Terminal at Folder |
-| Activate | `source etc/profile.d/conda.sh && conda activate .` |
-| Launch | `cellxgene launch ~/Downloads/YOUR_FILE.h5ad --port 5000` |
+| Open Terminal | Right-click folder background → New Terminal at Folder |
+| Activate environment | `source etc/profile.d/conda.sh && conda activate .` |
+| Launch app | `cellxgene launch ~/Downloads/YOUR_FILE.h5ad --port 5005` |
 
 ---
 
@@ -84,7 +84,7 @@ source etc/profile.d/conda.sh && conda activate . && cellxgene launch ~/Download
 - Press **Command + Shift + R** to refresh
 
 ### "Command not found"
-- Make sure you opened Terminal from the `etc` folder
+- Make sure you right-clicked on the **folder background** (not inside a subfolder)
 - Make sure you typed the command exactly
 
 ---
