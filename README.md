@@ -4,16 +4,6 @@
 
 ---
 
-## 🎯 What is This?
-
-cellxgene_VIP is a powerful tool for analyzing and visualizing single-cell RNA sequencing data:
-- 📊 View gene expression (violin plots, heatmaps)
-- 🔬 Find differences between cell groups (DEG analysis)
-- 🗺️ Explore cell relationships (UMAP, t-SNE plots)
-- 🔥 Create volcano plots
-
----
-
 ## 📦 Software Versions
 
 | Component | Version |
@@ -24,56 +14,63 @@ cellxgene_VIP is a powerful tool for analyzing and visualizing single-cell RNA s
 
 ---
 
-## 📥 Installation (2 Steps)
+## 📥 Installation (Super Easy!)
 
-### Step 1: Download from GitHub
+### Step 1: Download
 
 Go to: **https://github.com/ABC-FBMH/cellxgene_VIP_packed_Mac/releases/latest**
 
-You need to download **2 files** from the "Assets" section:
-1. **`cellxgene_VIP_portable_Mac_arm64.tar.gz`** (~835 MB) - The main package
-2. **`cellxgene_VIP_launcher.command`** (small file) - The launcher script
+Click on **`cellxgene_VIP_portable_Mac_arm64.tar.gz`** (~835 MB) to download.
 
-### Step 2: Extract and Use
+### Step 2: Extract
 
-1. **Create a folder** on your Desktop named `cellxgene_VIP`
-2. **Move both downloaded files** into this folder
-3. **Double-click** `cellxgene_VIP_portable_Mac_arm64.tar.gz` to extract it
-4. Open the extracted folder `cellxgene_VIP_opencode_fixed`
-5. **Right-click** on the `etc` folder and select **"New Terminal at Folder"**
-6. In the Terminal window, **copy and paste** this command:
-   ```
-   cp ../cellxgene_VIP_launcher.command .
-   ```
-   Then press **Enter**
-7. Now you can see `cellxgene_VIP_launcher.command` in the folder
+1. Find the downloaded file in your **Downloads** folder
+2. **Double-click** on it to extract
+3. A new folder `cellxgene_VIP_opencode_fixed` will appear
 
 ---
 
-## 🚀 How to Use (Every Time)
+## 🚀 How to Use
 
-### Option A: Quick Start (Recommended)
+### Step 1: Open Terminal
 
 1. Open the `cellxgene_VIP_opencode_fixed` folder
-2. **Right-click** on the `etc` folder → **"New Terminal at Folder"**
-3. In Terminal, **copy and paste** this command:
-   ```
-   source etc/profile.d/conda.sh && conda activate . && cellxgene launch ~/Downloads/YOUR_FILE.h5ad --port 5005
-   ```
-   *(Replace `YOUR_FILE.h5ad` with your actual data file name)*
+2. **Right-click** on the `etc` folder
+3. Select **"New Terminal at Folder"**
 
-4. Press **Enter**
-5. Wait for "Launching! Please go to http://localhost:5005"
-6. Open **Chrome** and go to: **http://localhost:5005**
+A Terminal window will open!
 
-### Option B: Using the Launcher
+### Step 2: Run cellxgene
 
-If you've set up the launcher in Step 2 above:
+In the Terminal window, **copy and paste** this command:
 
-1. **Double-click** `cellxgene_VIP_launcher.command`
-2. **Drag your .h5ad file** onto the Terminal window
-3. Press **Enter**
-4. Browser opens automatically!
+```
+source etc/profile.d/conda.sh && conda activate . && cellxgene launch ~/Downloads/YOUR_DATA_FILE.h5ad --port 5005
+```
+
+**Important:** Replace `YOUR_DATA_FILE.h5ad` with your actual file name!
+
+For example, if your file is called `cells.h5ad`:
+```
+source etc/profile.d/conda.sh && conda activate . && cellxgene launch ~/Downloads/cells.h5ad --port 5005
+```
+
+### Step 3: View Your Data
+
+1. Press **Enter**
+2. Wait a moment until you see "Launching! Please go to http://localhost:5005"
+3. Open **Chrome** browser
+4. Go to: **http://localhost:5005**
+
+---
+
+## 📝 Quick Reference
+
+| Action | Command |
+|--------|---------|
+| Open folder | Right-click `etc` → New Terminal at Folder |
+| Activate | `source etc/profile.d/conda.sh && conda activate .` |
+| Launch | `cellxgene launch ~/Downloads/YOUR_FILE.h5ad --port 5000` |
 
 ---
 
@@ -86,8 +83,9 @@ If you've set up the launcher in Step 2 above:
 - Use **Chrome** browser
 - Press **Command + Shift + R** to refresh
 
-### Command not found errors
+### "Command not found"
 - Make sure you opened Terminal from the `etc` folder
+- Make sure you typed the command exactly
 
 ---
 
